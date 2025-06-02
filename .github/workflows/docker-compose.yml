@@ -1,7 +1,9 @@
 name: Spring Boot CI/CD with Docker Compose
 
 on:
-  workflow_dispatch
+  push:
+    branches:
+      - main
 
 jobs:
   ci:
