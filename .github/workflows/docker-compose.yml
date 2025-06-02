@@ -3,7 +3,7 @@ name: Spring Boot CI/CD with Docker Compose
 on:
   push:
     branches:
-      - main  # 필요시 develop 등으로 변경
+      - main
 
 jobs:
   ci:
