@@ -1,6 +1,6 @@
 name: Build and Push Docker Image To AWS ECR
 on:
-  push
+  workflow_dispatch
 
 jobs:
   build-push-image:
@@ -81,6 +81,6 @@ jobs:
         run: |
           docker push ${{ secrets.AWS_ECR_PRIVATE_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.AWS_ECR_PRIVATE_REPOSITORY }}:latest
 
-      - name: (옵션) ECR 이미지 Pull 테스트
-        run: |
-          docker pull ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.AWS_ECR_PRIVATE_REPOSITORY }}:latest
+      #- name: (옵션) ECR 이미지 Pull 테스트
+      #  run: |
+      #    docker pull ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.AWS_ECR_PRIVATE_REPOSITORY }}:latest
